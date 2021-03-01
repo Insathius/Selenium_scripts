@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class demoqa {
+public class AutomationPracticeForm {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
@@ -63,20 +63,16 @@ public class demoqa {
 		driver.findElement(By.id("currentAddress")).sendKeys("Test Address");
 		
 		//State and City
-		driver.findElement(By.xpath("//label[contains(text(),'Select State')]")).sendKeys("NCR");
+		driver.findElement(By.xpath("//div[@id='state']//input")).sendKeys("NCR");
 		Thread.sleep(1000);
-		
-		
-		
-		//all fields must be complete
-
-		//validate fields and popup?
-		
+		driver.findElement(By.xpath("//div[@id='state']//input")).sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@id='city']//input")).sendKeys("Delhi");
 		
 		//submission
-		//Thread.sleep(1000);
-		//driver.findElement(By.id("submit")).submit();
-		//driver.quit(); // closes all the browsers including popups
+		Thread.sleep(1000);
+		driver.findElement(By.id("submit")).submit();
+		driver.quit(); // closes all the browsers including popups
 		
 	}
 
